@@ -11,9 +11,15 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload() {
-    // Load assets here
+    // Load the tilemap JSON
+    this.load.tilemapTiledJSON('map', 'assets/Hospital-map(json).json');
+
+    // Load the tileset image
+    this.load.image('tiles', 'assets/tilemap.jpeg');
 }
 
+
 function create() {
-    this.add.text(200, 250, 'Welcome to Hospital Sim!', { fontSize: '24px', fill: '#000' });
+
 }
+
