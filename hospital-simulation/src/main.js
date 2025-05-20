@@ -10,75 +10,67 @@ class HospitalScene extends Phaser.Scene {
         this.load.tilemapTiledJSON('hospitalMap', 'public/assets/Hospital-updated-map.json');
         console.log('Loading hospital map JSON');
 
-        // Load tileset images from Old directory
-        // 16x16 tilesets
-        this.load.image('tileset_16x16_1', 'public/assets/images/Old/Tileset_16x16_1.png');
-        this.load.image('tileset_16x16_2', 'public/assets/images/Old/Tileset_16x16_2.png');
-        this.load.image('tileset_16x16_3', 'public/assets/images/Old/Tileset_16x16_3.png');
-        this.load.image('tileset_16x16_9', 'public/assets/images/Old/Tileset_16x16_9.png');
-        this.load.image('tileset_16x16_16', 'public/assets/images/Old/Tileset_16x16_16.png');
-        console.log('Loading 16x16 tilesets');
-
-        // 32x32 tilesets
-        this.load.image('tileset_32x32_1', 'public/assets/images/Old/Tileset_32x32_1.png');
-        this.load.image('tileset_32x32_2', 'public/assets/images/Old/Tileset_32x32_2.png');
-        this.load.image('tileset_32x32_3', 'public/assets/images/Old/Tileset_32x32_3.png');
-        this.load.image('tileset_32x32_9', 'public/assets/images/Old/Tileset_32x32_9.png');
-        this.load.image('tileset_32x32_16', 'public/assets/images/Old/Tileset_32x32_16.png');
-        console.log('Loading 32x32 tilesets');
-
-        // 48x48 tilesets
-        this.load.image('tileset_48x48_1', 'public/assets/images/Old/Tileset_48x48_1.png');
-        this.load.image('tileset_48x48_2', 'public/assets/images/Old/Tileset_48x48_2.png');
-        this.load.image('tileset_48x48_3', 'public/assets/images/Old/Tileset_48x48_3.png');
-        this.load.image('tileset_48x48_9', 'public/assets/images/Old/Tileset_48x48_9.png');
-        this.load.image('tileset_48x48_16', 'public/assets/images/Old/Tileset_48x48_16.png');
-        console.log('Loading 48x48 tilesets');
+        // Load tileset images based on .tsx files
+        this.load.image('Tileset', 'public/assets/tilesets/kenney_platformer-art-extended-tileset/PNG Castle/Spritesheet/sheet.png');
+        this.load.image('Grass-tileset', 'public/assets/tilesets/kenney_platformer-art-extended-tileset/PNG Grass/Spritesheet/sheet.png');
+        this.load.image('Nature-tileset', 'public/assets/tilesets/kenney_platformer-art-extended-tileset/PNG Nature/Spritesheet/sheet.png');
+        this.load.image('Objects-hospital', 'public/assets/tilesets/kenney_platformer-art-extended-tileset/PNG Objects/Spritesheet/sheet.png');
+        this.load.image('neo-tiles', 'public/assets/tilesets/Modern tiles_Free/Modern tiles_Free/PNG/Modern tiles_Free.png');
+        this.load.image('Tileset', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Castle/Spritesheet/sheet.png');
+        this.load.image('Grass-tileset', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Grass/Spritesheet/sheet.png');
+        this.load.image('Nature-tileset', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Nature/Spritesheet/sheet.png');
+        this.load.image('Objects-hospital', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Objects/Spritesheet/sheet.png');
+        this.load.image('neo-tiles', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Modern/Spritesheet/sheet.png');
+        this.load.image('Street-tilev2', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG City/Spritesheet/sheet.png');
+        this.load.image('Flooring-tileset', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Interior/Spritesheet/sheet.png');
+        this.load.image('Furniture-tileset', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Interior/Spritesheet/sheet.png');
+        this.load.image('Character-tileset', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Characters/Spritesheet/sheet.png');
+        console.log('Loading tileset images');
 
         // Character animations as spritesheets
         // 16x16 animations
-        this.load.spritesheet('idle_16x16', 'public/assets/images/Old/idle_16x16_2.png', {
+        this.load.spritesheet('idle_16x16', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Idle.png', {
             frameWidth: 16,
             frameHeight: 16
         });
-        this.load.spritesheet('run_16x16', 'public/assets/images/Old/run_horizontal_16x16_2.png', {
+        this.load.spritesheet('run_16x16', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Run.png', {
             frameWidth: 16,
             frameHeight: 16
         });
         console.log('Loading 16x16 character animations');
 
         // 32x32 animations
-        this.load.spritesheet('idle_32x32', 'public/assets/images/Old/idle_32x32_2.png', {
+        this.load.spritesheet('idle_32x32', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Idle.png', {
             frameWidth: 32,
             frameHeight: 32
         });
-        this.load.spritesheet('run_32x32', 'public/assets/images/Old/run_horizontal_32x32_2.png', {
+        this.load.spritesheet('run_32x32', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Run.png', {
             frameWidth: 32,
             frameHeight: 32
         });
         console.log('Loading 32x32 character animations');
 
         // 48x48 animations
-        this.load.spritesheet('idle_48x48', 'public/assets/images/Old/idle_48x48_2.png', {
+        this.load.spritesheet('idle_48x48', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Idle.png', {
             frameWidth: 48,
             frameHeight: 48
         });
-        this.load.spritesheet('run_48x48', 'public/assets/images/Old/run_horizontal_48x48_2.png', {
+        this.load.spritesheet('run_48x48', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Run.png', {
             frameWidth: 48,
             frameHeight: 48
         });
         console.log('Loading 48x48 character animations');
 
         // Load images from old/mv folder
-        this.load.spritesheet('character_2_16x16', 'public/assets/images/Old/mv/Character_2_16x16_RPGMAKER.png', {
+        this.load.spritesheet('character_2_16x16', 'public/assets/tilesets/Modern tiles_Free/Old/mv/Character_2_16x16_RPGMAKER.png', {
             frameWidth: 16,
             frameHeight: 16
         });
-        this.load.spritesheet('character_2_32x32', 'public/assets/images/Old/mv/Character_2_32x32_RPGMAKER.png', {
+        this.load.spritesheet('character_2_32x32', 'public/assets/tilesets/Modern tiles_Free/Old/mv/Character_2_32x32_RPGMAKER.png', {
             frameWidth: 32,
             frameHeight: 32
         });
-        this.load.spritesheet('character_2_48x48', 'public/assets/images/Old/mv/Character_2_48x48_RPGMAKER.png', {
+        this.load.spritesheet('character_2_48x48', 'public/assets/tilesets/Modern tiles_Free/Old/mv/Character_2_48x48_RPGMAKER.png', {
             frameWidth: 48,
             frameHeight: 48
         });
@@ -92,36 +84,24 @@ class HospitalScene extends Phaser.Scene {
         const map = this.make.tilemap({ key: 'hospitalMap' });
         console.log('Tilemap created');
 
-        // Add all tilesets
-        // 16x16 tilesets
-        const tileset16_1 = map.addTilesetImage('Tileset', 'tileset_16x16_1', 16, 16);
-        const tileset16_2 = map.addTilesetImage('Grass-tileset', 'tileset_16x16_2', 16, 16);
-        const tileset16_3 = map.addTilesetImage('Nature-tileset', 'tileset_16x16_3', 16, 16);
-        const tileset16_9 = map.addTilesetImage('Objects-hospital', 'tileset_16x16_9', 16, 16);
-        const tileset16_16 = map.addTilesetImage('neo-tiles', 'tileset_16x16_16', 16, 16);
-
-        // 32x32 tilesets
-        const tileset32_1 = map.addTilesetImage('Street-tilev2', 'tileset_32x32_1', 32, 32);
-        const tileset32_2 = map.addTilesetImage('Flooring-tileset', 'tileset_32x32_2', 32, 32);
-        const tileset32_3 = map.addTilesetImage('Furniture-tileset', 'tileset_32x32_3', 32, 32);
-        const tileset32_9 = map.addTilesetImage('Character-tileset', 'tileset_32x32_9', 32, 32);
-        const tileset32_16 = map.addTilesetImage('Tileset', 'tileset_32x32_16', 32, 32);
-
-        // 48x48 tilesets
-        const tileset48_1 = map.addTilesetImage('Grass-tileset', 'tileset_48x48_1', 48, 48);
-        const tileset48_2 = map.addTilesetImage('Nature-tileset', 'tileset_48x48_2', 48, 48);
-        const tileset48_3 = map.addTilesetImage('Objects-hospital', 'tileset_48x48_3', 48, 48);
-        const tileset48_9 = map.addTilesetImage('neo-tiles', 'tileset_48x48_9', 48, 48);
-        const tileset48_16 = map.addTilesetImage('Street-tilev2', 'tileset_48x48_16', 48, 48);
+        // Add tilesets with correct tile sizes
+        const tilesetBase = map.addTilesetImage('Tileset', 'Tileset', 16, 16, 1, 1);
+        const tilesetGrass = map.addTilesetImage('Grass-tileset', 'Grass-tileset', 16, 16, 1, 1);
+        const tilesetNature = map.addTilesetImage('Nature-tileset', 'Nature-tileset', 16, 16, 1, 1);
+        const tilesetObjects = map.addTilesetImage('Objects-hospital', 'Objects-hospital', 16, 16, 1, 1);
+        const tilesetNeo = map.addTilesetImage('neo-tiles', 'neo-tiles', 16, 16, 1, 1);
+        const tilesetStreet = map.addTilesetImage('Street-tilev2', 'Street-tilev2', 32, 32, 1, 1);
+        const tilesetFlooring = map.addTilesetImage('Flooring-tileset', 'Flooring-tileset', 32, 32, 1, 1);
+        const tilesetFurniture = map.addTilesetImage('Furniture-tileset', 'Furniture-tileset', 32, 32, 1, 1);
+        const tilesetCharacter = map.addTilesetImage('Character-tileset', 'Character-tileset', 32, 32, 1, 1);
         console.log('Tilesets added');
 
         // Create all tile layers from Tiled
         map.layers.forEach(layerData => {
             if (layerData.type === 'tilelayer') {
                 const layer = map.createLayer(layerData.name, [
-                    tileset16_1, tileset16_2, tileset16_3, tileset16_9, tileset16_16,
-                    tileset32_1, tileset32_2, tileset32_3, tileset32_9, tileset32_16,
-                    tileset48_1, tileset48_2, tileset48_3, tileset48_9, tileset48_16
+                    tilesetBase, tilesetGrass, tilesetNature, tilesetObjects, tilesetNeo,
+                    tilesetStreet, tilesetFlooring, tilesetFurniture, tilesetCharacter
                 ], 0, 0);
                 console.log('Created layer:', layerData.name);
             }
