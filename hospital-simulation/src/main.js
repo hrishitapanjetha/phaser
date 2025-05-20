@@ -10,68 +10,79 @@ class HospitalScene extends Phaser.Scene {
         this.load.tilemapTiledJSON('hospitalMap', 'public/assets/Hospital-updated-map.json');
         console.log('Loading hospital map JSON');
 
-        // Load overview image
-        this.load.image('overview', 'public/assets/images/free_overview.png');
-        console.log('Loading overview image');
-
-        // Load tileset images - 16x16
-        this.load.image('tiles_16x16', 'public/assets/images/Interiors_free/16x16/Room_Builder_free_16x16.png');
-        this.load.image('interiors_16x16', 'public/assets/images/Interiors_free/16x16/Interiors_free_16x16.png');
+        // Load tileset images from Old directory
+        // 16x16 tilesets
+        this.load.image('tileset_16x16_1', 'public/assets/images/Old/Tileset_16x16_1.png');
+        this.load.image('tileset_16x16_2', 'public/assets/images/Old/Tileset_16x16_2.png');
+        this.load.image('tileset_16x16_3', 'public/assets/images/Old/Tileset_16x16_3.png');
+        this.load.image('tileset_16x16_9', 'public/assets/images/Old/Tileset_16x16_9.png');
+        this.load.image('tileset_16x16_16', 'public/assets/images/Old/Tileset_16x16_16.png');
         console.log('Loading 16x16 tilesets');
 
-        // Load tileset images - 32x32
-        this.load.image('tiles_32x32', 'public/assets/images/Interiors_free/32x32/Room_Builder_free_32x32.png');
-        this.load.image('interiors_32x32', 'public/assets/images/Interiors_free/32x32/Interiors_free_32x32.png');
+        // 32x32 tilesets
+        this.load.image('tileset_32x32_1', 'public/assets/images/Old/Tileset_32x32_1.png');
+        this.load.image('tileset_32x32_2', 'public/assets/images/Old/Tileset_32x32_2.png');
+        this.load.image('tileset_32x32_3', 'public/assets/images/Old/Tileset_32x32_3.png');
+        this.load.image('tileset_32x32_9', 'public/assets/images/Old/Tileset_32x32_9.png');
+        this.load.image('tileset_32x32_16', 'public/assets/images/Old/Tileset_32x32_16.png');
         console.log('Loading 32x32 tilesets');
 
-        // Load tileset images - 48x48
-        this.load.image('tiles_48x48', 'public/assets/images/Interiors_free/48x48/Room_Builder_free_48x48.png');
-        this.load.image('interiors_48x48', 'public/assets/images/Interiors_free/48x48/Interiors_free_48x48.png');
+        // 48x48 tilesets
+        this.load.image('tileset_48x48_1', 'public/assets/images/Old/Tileset_48x48_1.png');
+        this.load.image('tileset_48x48_2', 'public/assets/images/Old/Tileset_48x48_2.png');
+        this.load.image('tileset_48x48_3', 'public/assets/images/Old/Tileset_48x48_3.png');
+        this.load.image('tileset_48x48_9', 'public/assets/images/Old/Tileset_48x48_9.png');
+        this.load.image('tileset_48x48_16', 'public/assets/images/Old/Tileset_48x48_16.png');
         console.log('Loading 48x48 tilesets');
 
-        // Load character images - Bob
-        this.load.image('bob', 'public/assets/images/Characters_free/Bob_16x16.png');
-        this.load.image('bob_idle', 'public/assets/images/Characters_free/Bob_idle_16x16.png');
-        this.load.image('bob_idle_anim', 'public/assets/images/Characters_free/Bob_idle_anim_16x16.png');
-        this.load.image('bob_run', 'public/assets/images/Characters_free/Bob_run_16x16.png');
-        this.load.image('bob_sit', 'public/assets/images/Characters_free/Bob_sit_16x16.png');
-        this.load.image('bob_sit2', 'public/assets/images/Characters_free/Bob_sit2_16x16.png');
-        this.load.image('bob_sit3', 'public/assets/images/Characters_free/Bob_sit3_16x16.png');
-        this.load.image('bob_phone', 'public/assets/images/Characters_free/Bob_phone_16x16.png');
-        console.log('Loading Bob character assets');
+        // Character animations as spritesheets
+        // 16x16 animations
+        this.load.spritesheet('idle_16x16', 'public/assets/images/Old/idle_16x16_2.png', {
+            frameWidth: 16,
+            frameHeight: 16
+        });
+        this.load.spritesheet('run_16x16', 'public/assets/images/Old/run_horizontal_16x16_2.png', {
+            frameWidth: 16,
+            frameHeight: 16
+        });
+        console.log('Loading 16x16 character animations');
 
-        // Load character images - Alex
-        this.load.image('alex', 'public/assets/images/Characters_free/Alex_16x16.png');
-        this.load.image('alex_idle', 'public/assets/images/Characters_free/Alex_idle_16x16.png');
-        this.load.image('alex_idle_anim', 'public/assets/images/Characters_free/Alex_idle_anim_16x16.png');
-        this.load.image('alex_run', 'public/assets/images/Characters_free/Alex_run_16x16.png');
-        this.load.image('alex_sit', 'public/assets/images/Characters_free/Alex_sit_16x16.png');
-        this.load.image('alex_sit2', 'public/assets/images/Characters_free/Alex_sit2_16x16.png');
-        this.load.image('alex_sit3', 'public/assets/images/Characters_free/Alex_sit3_16x16.png');
-        this.load.image('alex_phone', 'public/assets/images/Characters_free/Alex_phone_16x16.png');
-        console.log('Loading Alex character assets');
+        // 32x32 animations
+        this.load.spritesheet('idle_32x32', 'public/assets/images/Old/idle_32x32_2.png', {
+            frameWidth: 32,
+            frameHeight: 32
+        });
+        this.load.spritesheet('run_32x32', 'public/assets/images/Old/run_horizontal_32x32_2.png', {
+            frameWidth: 32,
+            frameHeight: 32
+        });
+        console.log('Loading 32x32 character animations');
 
-        // Load character images - Adam
-        this.load.image('adam', 'public/assets/images/Characters_free/Adam_16x16.png');
-        this.load.image('adam_idle', 'public/assets/images/Characters_free/Adam_idle_16x16.png');
-        this.load.image('adam_idle_anim', 'public/assets/images/Characters_free/Adam_idle_anim_16x16.png');
-        this.load.image('adam_run', 'public/assets/images/Characters_free/Adam_run_16x16.png');
-        this.load.image('adam_sit', 'public/assets/images/Characters_free/Adam_sit_16x16.png');
-        this.load.image('adam_sit2', 'public/assets/images/Characters_free/Adam_sit2_16x16.png');
-        this.load.image('adam_sit3', 'public/assets/images/Characters_free/Adam_sit3_16x16.png');
-        this.load.image('adam_phone', 'public/assets/images/Characters_free/Adam_phone_16x16.png');
-        console.log('Loading Adam character assets');
+        // 48x48 animations
+        this.load.spritesheet('idle_48x48', 'public/assets/images/Old/idle_48x48_2.png', {
+            frameWidth: 48,
+            frameHeight: 48
+        });
+        this.load.spritesheet('run_48x48', 'public/assets/images/Old/run_horizontal_48x48_2.png', {
+            frameWidth: 48,
+            frameHeight: 48
+        });
+        console.log('Loading 48x48 character animations');
 
-        // Load character images - Amelia
-        this.load.image('amelia', 'public/assets/images/Characters_free/Amelia_16x16.png');
-        this.load.image('amelia_idle', 'public/assets/images/Characters_free/Amelia_idle_16x16.png');
-        this.load.image('amelia_idle_anim', 'public/assets/images/Characters_free/Amelia_idle_anim_16x16.png');
-        this.load.image('amelia_run', 'public/assets/images/Characters_free/Amelia_run_16x16.png');
-        this.load.image('amelia_sit', 'public/assets/images/Characters_free/Amelia_sit_16x16.png');
-        this.load.image('amelia_sit2', 'public/assets/images/Characters_free/Amelia_sit2_16x16.png');
-        this.load.image('amelia_sit3', 'public/assets/images/Characters_free/Amelia_sit3_16x16.png');
-        this.load.image('amelia_phone', 'public/assets/images/Characters_free/Amelia_phone_16x16.png');
-        console.log('Loading Amelia character assets');
+        // Load images from old/mv folder
+        this.load.spritesheet('character_2_16x16', 'public/assets/images/Old/mv/Character_2_16x16_RPGMAKER.png', {
+            frameWidth: 16,
+            frameHeight: 16
+        });
+        this.load.spritesheet('character_2_32x32', 'public/assets/images/Old/mv/Character_2_32x32_RPGMAKER.png', {
+            frameWidth: 32,
+            frameHeight: 32
+        });
+        this.load.spritesheet('character_2_48x48', 'public/assets/images/Old/mv/Character_2_48x48_RPGMAKER.png', {
+            frameWidth: 48,
+            frameHeight: 48
+        });
+        console.log('Loading characters from old/mv folder');
     }
 
     create() {
@@ -82,25 +93,81 @@ class HospitalScene extends Phaser.Scene {
         console.log('Tilemap created');
 
         // Add all tilesets
-        const tileset16 = map.addTilesetImage('Room_Builder_free_16x16', 'tiles_16x16', 16, 16);
-        const interiors16 = map.addTilesetImage('Interiors_free_16x16', 'interiors_16x16', 16, 16);
-        const tileset32 = map.addTilesetImage('Room_Builder_free_32x32', 'tiles_32x32', 32, 32);
-        const interiors32 = map.addTilesetImage('Interiors_free_32x32', 'interiors_32x32', 32, 32);
-        const tileset48 = map.addTilesetImage('Room_Builder_free_48x48', 'tiles_48x48', 48, 48);
-        const interiors48 = map.addTilesetImage('Interiors_free_48x48', 'interiors_48x48', 48, 48);
+        // 16x16 tilesets
+        const tileset16_1 = map.addTilesetImage('Tileset', 'tileset_16x16_1', 16, 16);
+        const tileset16_2 = map.addTilesetImage('Grass-tileset', 'tileset_16x16_2', 16, 16);
+        const tileset16_3 = map.addTilesetImage('Nature-tileset', 'tileset_16x16_3', 16, 16);
+        const tileset16_9 = map.addTilesetImage('Objects-hospital', 'tileset_16x16_9', 16, 16);
+        const tileset16_16 = map.addTilesetImage('neo-tiles', 'tileset_16x16_16', 16, 16);
+
+        // 32x32 tilesets
+        const tileset32_1 = map.addTilesetImage('Street-tilev2', 'tileset_32x32_1', 32, 32);
+        const tileset32_2 = map.addTilesetImage('Flooring-tileset', 'tileset_32x32_2', 32, 32);
+        const tileset32_3 = map.addTilesetImage('Furniture-tileset', 'tileset_32x32_3', 32, 32);
+        const tileset32_9 = map.addTilesetImage('Character-tileset', 'tileset_32x32_9', 32, 32);
+        const tileset32_16 = map.addTilesetImage('Tileset', 'tileset_32x32_16', 32, 32);
+
+        // 48x48 tilesets
+        const tileset48_1 = map.addTilesetImage('Grass-tileset', 'tileset_48x48_1', 48, 48);
+        const tileset48_2 = map.addTilesetImage('Nature-tileset', 'tileset_48x48_2', 48, 48);
+        const tileset48_3 = map.addTilesetImage('Objects-hospital', 'tileset_48x48_3', 48, 48);
+        const tileset48_9 = map.addTilesetImage('neo-tiles', 'tileset_48x48_9', 48, 48);
+        const tileset48_16 = map.addTilesetImage('Street-tilev2', 'tileset_48x48_16', 48, 48);
         console.log('Tilesets added');
 
         // Create all tile layers from Tiled
         map.layers.forEach(layerData => {
             if (layerData.type === 'tilelayer') {
-                // Create layer with all tilesets
                 const layer = map.createLayer(layerData.name, [
-                    tileset16, interiors16,
-                    tileset32, interiors32,
-                    tileset48, interiors48
+                    tileset16_1, tileset16_2, tileset16_3, tileset16_9, tileset16_16,
+                    tileset32_1, tileset32_2, tileset32_3, tileset32_9, tileset32_16,
+                    tileset48_1, tileset48_2, tileset48_3, tileset48_9, tileset48_16
                 ], 0, 0);
                 console.log('Created layer:', layerData.name);
             }
+        });
+
+        // Create animations
+        // 16x16 animations
+        this.anims.create({
+            key: 'idle_16x16_anim',
+            frames: this.anims.generateFrameNumbers('idle_16x16', { start: 0, end: -1 }),
+            frameRate: 10,
+            repeat: -1
+        });
+        this.anims.create({
+            key: 'run_16x16_anim',
+            frames: this.anims.generateFrameNumbers('run_16x16', { start: 0, end: -1 }),
+            frameRate: 10,
+            repeat: -1
+        });
+
+        // 32x32 animations
+        this.anims.create({
+            key: 'idle_32x32_anim',
+            frames: this.anims.generateFrameNumbers('idle_32x32', { start: 0, end: -1 }),
+            frameRate: 10,
+            repeat: -1
+        });
+        this.anims.create({
+            key: 'run_32x32_anim',
+            frames: this.anims.generateFrameNumbers('run_32x32', { start: 0, end: -1 }),
+            frameRate: 10,
+            repeat: -1
+        });
+
+        // 48x48 animations
+        this.anims.create({
+            key: 'idle_48x48_anim',
+            frames: this.anims.generateFrameNumbers('idle_48x48', { start: 0, end: -1 }),
+            frameRate: 10,
+            repeat: -1
+        });
+        this.anims.create({
+            key: 'run_48x48_anim',
+            frames: this.anims.generateFrameNumbers('run_48x48', { start: 0, end: -1 }),
+            frameRate: 10,
+            repeat: -1
         });
 
         // Handle navigation areas
@@ -122,24 +189,37 @@ class HospitalScene extends Phaser.Scene {
                     graphics.strokeRect(obj.x, obj.y, obj.width, obj.height);
                 }
 
-                // Log navigation area properties
+                // Log navigation area properties with proper type handling
                 if (obj.properties) {
+                    const getPropertyValue = (name) => {
+                        const prop = obj.properties.find(p => p.name === name);
+                        if (!prop) return null;
+
+                        // Handle different property types
+                        switch (prop.type) {
+                            case 'float':
+                                return parseFloat(prop.value);
+                            case 'int':
+                                return parseInt(prop.value);
+                            case 'bool':
+                                return prop.value === 'true';
+                            default:
+                                return prop.value;
+                        }
+                    };
+
                     console.log('Navigation Area:', {
-                        name: obj.properties.find(p => p.name === 'name')?.value,
-                        function: obj.properties.find(p => p.name === 'function')?.value,
-                        zone_id: obj.properties.find(p => p.name === 'zone_id')?.value,
-                        speed: obj.properties.find(p => p.name === 'speed')?.value
+                        name: getPropertyValue('name'),
+                        function: getPropertyValue('function'),
+                        zone_id: getPropertyValue('zone_id'),
+                        speed: getPropertyValue('speed'),
+                        type: getPropertyValue('type')
                     });
                 }
             });
         } else {
             console.log('No navigation layer found');
         }
-
-        // Add overview image in the top-right corner
-        const overviewImage = this.add.image(this.cameras.main.width - 10, 10, 'overview');
-        overviewImage.setOrigin(1, 0); // Set origin to top-right
-        overviewImage.setScale(0.5); // Scale down the image if needed
     }
 }
 
