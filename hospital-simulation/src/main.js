@@ -13,68 +13,63 @@ class HospitalScene extends Phaser.Scene {
         // Load tileset images based on .tsx files
         this.load.image('Tileset', 'public/assets/tilesets/kenney_platformer-art-extended-tileset/PNG Castle/Spritesheet/sheet.png');
         this.load.image('Grass-tileset', 'public/assets/tilesets/kenney_platformer-art-extended-tileset/PNG Grass/Spritesheet/sheet.png');
-        this.load.image('Nature-tileset', 'public/assets/tilesets/kenney_platformer-art-extended-tileset/PNG Nature/Spritesheet/sheet.png');
-        this.load.image('Objects-hospital', 'public/assets/tilesets/kenney_platformer-art-extended-tileset/PNG Objects/Spritesheet/sheet.png');
-        this.load.image('neo-tiles', 'public/assets/tilesets/Modern tiles_Free/Modern tiles_Free/PNG/Modern tiles_Free.png');
-        this.load.image('Tileset', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Castle/Spritesheet/sheet.png');
-        this.load.image('Grass-tileset', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Grass/Spritesheet/sheet.png');
-        this.load.image('Nature-tileset', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Nature/Spritesheet/sheet.png');
-        this.load.image('Objects-hospital', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Objects/Spritesheet/sheet.png');
-        this.load.image('neo-tiles', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Modern/Spritesheet/sheet.png');
-        this.load.image('Street-tilev2', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG City/Spritesheet/sheet.png');
-        this.load.image('Flooring-tileset', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Interior/Spritesheet/sheet.png');
-        this.load.image('Furniture-tileset', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Interior/Spritesheet/sheet.png');
-        this.load.image('Character-tileset', 'public/assets/images/kenney_platformer-art-extended-tileset/PNG Characters/Spritesheet/sheet.png');
+        this.load.image('Nature-tileset', 'public/assets/tilesets/Kauzz Free Tiles I/nature_outside-tilef.png');
+        this.load.image('Objects-hospital', 'public/assets/tilesets/Kauzz Free Tiles I/shop-and-hospital.png');
+        this.load.image('neo-tiles', 'public/assets/tilesets/Kauzz Free Tiles I/neotiles.png');
+        this.load.image('Street-tilev2', 'public/assets/tilesets/Kauzz Free Tiles I/street-tilev2.png');
+        this.load.image('Flooring-tileset', 'public/assets/tilesets/Modern tiles_Free/Modern tiles_Free/PNG/Modern tiles_Free.png');
+        this.load.image('Furniture-tileset', 'public/assets/tilesets/Modern tiles_Free/Modern tiles_Free/PNG/Modern tiles_Free.png');
+        this.load.image('Character-tileset', 'public/assets/tilesets/Modern tiles_Free/Modern tiles_Free/PNG/Modern tiles_Free.png');
         console.log('Loading tileset images');
 
-        // Character animations as spritesheets
-        // 16x16 animations
-        this.load.spritesheet('idle_16x16', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Idle.png', {
-            frameWidth: 16,
-            frameHeight: 16
-        });
-        this.load.spritesheet('run_16x16', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Run.png', {
-            frameWidth: 16,
-            frameHeight: 16
-        });
-        console.log('Loading 16x16 character animations');
+        // // Character animations as spritesheets
+        // // 16x16 animations
+        // this.load.spritesheet('idle_16x16', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Idle.png', {
+        //     frameWidth: 16,
+        //     frameHeight: 16
+        // });
+        // this.load.spritesheet('run_16x16', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Run.png', {
+        //     frameWidth: 16,
+        //     frameHeight: 16
+        // });
+        // console.log('Loading 16x16 character animations');
 
-        // 32x32 animations
-        this.load.spritesheet('idle_32x32', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Idle.png', {
-            frameWidth: 32,
-            frameHeight: 32
-        });
-        this.load.spritesheet('run_32x32', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Run.png', {
-            frameWidth: 32,
-            frameHeight: 32
-        });
-        console.log('Loading 32x32 character animations');
+        // // 32x32 animations
+        // this.load.spritesheet('idle_32x32', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Idle.png', {
+        //     frameWidth: 32,
+        //     frameHeight: 32
+        // });
+        // this.load.spritesheet('run_32x32', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Run.png', {
+        //     frameWidth: 32,
+        //     frameHeight: 32
+        // });
+        // console.log('Loading 32x32 character animations');
 
-        // 48x48 animations
-        this.load.spritesheet('idle_48x48', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Idle.png', {
-            frameWidth: 48,
-            frameHeight: 48
-        });
-        this.load.spritesheet('run_48x48', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Run.png', {
-            frameWidth: 48,
-            frameHeight: 48
-        });
-        console.log('Loading 48x48 character animations');
+        // // 48x48 animations
+        // this.load.spritesheet('idle_48x48', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Idle.png', {
+        //     frameWidth: 48,
+        //     frameHeight: 48
+        // });
+        // this.load.spritesheet('run_48x48', 'public/assets/tilesets/Kauzz Free Tiles I/Characters/Run.png', {
+        //     frameWidth: 48,
+        //     frameHeight: 48
+        // });
+        // console.log('Loading 48x48 character animations');
 
-        // Load images from old/mv folder
-        this.load.spritesheet('character_2_16x16', 'public/assets/tilesets/Modern tiles_Free/Old/mv/Character_2_16x16_RPGMAKER.png', {
-            frameWidth: 16,
-            frameHeight: 16
-        });
-        this.load.spritesheet('character_2_32x32', 'public/assets/tilesets/Modern tiles_Free/Old/mv/Character_2_32x32_RPGMAKER.png', {
-            frameWidth: 32,
-            frameHeight: 32
-        });
-        this.load.spritesheet('character_2_48x48', 'public/assets/tilesets/Modern tiles_Free/Old/mv/Character_2_48x48_RPGMAKER.png', {
-            frameWidth: 48,
-            frameHeight: 48
-        });
-        console.log('Loading characters from old/mv folder');
+        // // Load images from old/mv folder
+        // this.load.spritesheet('character_2_16x16', 'public/assets/tilesets/Modern tiles_Free/Old/mv/Character_2_16x16_RPGMAKER.png', {
+        //     frameWidth: 16,
+        //     frameHeight: 16
+        // });
+        // this.load.spritesheet('character_2_32x32', 'public/assets/tilesets/Modern tiles_Free/Old/mv/Character_2_32x32_RPGMAKER.png', {
+        //     frameWidth: 32,
+        //     frameHeight: 32
+        // });
+        // this.load.spritesheet('character_2_48x48', 'public/assets/tilesets/Modern tiles_Free/Old/mv/Character_2_48x48_RPGMAKER.png', {
+        //     frameWidth: 48,
+        //     frameHeight: 48
+        // });
+        // console.log('Loading characters from old/mv folder');
     }
 
     create() {
@@ -109,46 +104,46 @@ class HospitalScene extends Phaser.Scene {
 
         // Create animations
         // 16x16 animations
-        this.anims.create({
-            key: 'idle_16x16_anim',
-            frames: this.anims.generateFrameNumbers('idle_16x16', { start: 0, end: -1 }),
-            frameRate: 10,
-            repeat: -1
-        });
-        this.anims.create({
-            key: 'run_16x16_anim',
-            frames: this.anims.generateFrameNumbers('run_16x16', { start: 0, end: -1 }),
-            frameRate: 10,
-            repeat: -1
-        });
+        // this.anims.create({
+        //     key: 'idle_16x16_anim',
+        //     frames: this.anims.generateFrameNumbers('idle_16x16', { start: 0, end: -1 }),
+        //     frameRate: 10,
+        //     repeat: -1
+        // });
+        // this.anims.create({
+        //     key: 'run_16x16_anim',
+        //     frames: this.anims.generateFrameNumbers('run_16x16', { start: 0, end: -1 }),
+        //     frameRate: 10,
+        //     repeat: -1
+        // });
 
-        // 32x32 animations
-        this.anims.create({
-            key: 'idle_32x32_anim',
-            frames: this.anims.generateFrameNumbers('idle_32x32', { start: 0, end: -1 }),
-            frameRate: 10,
-            repeat: -1
-        });
-        this.anims.create({
-            key: 'run_32x32_anim',
-            frames: this.anims.generateFrameNumbers('run_32x32', { start: 0, end: -1 }),
-            frameRate: 10,
-            repeat: -1
-        });
+        // // 32x32 animations
+        // this.anims.create({
+        //     key: 'idle_32x32_anim',
+        //     frames: this.anims.generateFrameNumbers('idle_32x32', { start: 0, end: -1 }),
+        //     frameRate: 10,
+        //     repeat: -1
+        // });
+        // this.anims.create({
+        //     key: 'run_32x32_anim',
+        //     frames: this.anims.generateFrameNumbers('run_32x32', { start: 0, end: -1 }),
+        //     frameRate: 10,
+        //     repeat: -1
+        // });
 
-        // 48x48 animations
-        this.anims.create({
-            key: 'idle_48x48_anim',
-            frames: this.anims.generateFrameNumbers('idle_48x48', { start: 0, end: -1 }),
-            frameRate: 10,
-            repeat: -1
-        });
-        this.anims.create({
-            key: 'run_48x48_anim',
-            frames: this.anims.generateFrameNumbers('run_48x48', { start: 0, end: -1 }),
-            frameRate: 10,
-            repeat: -1
-        });
+        // // 48x48 animations
+        // this.anims.create({
+        //     key: 'idle_48x48_anim',
+        //     frames: this.anims.generateFrameNumbers('idle_48x48', { start: 0, end: -1 }),
+        //     frameRate: 10,
+        //     repeat: -1
+        // });
+        // this.anims.create({
+        //     key: 'run_48x48_anim',
+        //     frames: this.anims.generateFrameNumbers('run_48x48', { start: 0, end: -1 }),
+        //     frameRate: 10,
+        //     repeat: -1
+        // });
 
         // Handle navigation areas
         const navigationLayer = map.getObjectLayer('Navigation-area');
