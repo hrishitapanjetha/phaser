@@ -23,7 +23,15 @@ class HospitalScene extends Phaser.Scene {
         this.load.image('building-inner-tiles', 'public/assets/Hospital-tiled/Kauzz Free Tiles I/building_inner-tileg.png');
         console.log('Loading tileset images');
 
+        // Add load error handler
+        this.load.on('loaderror', (file) => {
+            console.error('Error loading file:', file.src);
+        });
 
+        // Add complete handler
+        this.load.on('complete', () => {
+            console.log('All assets loaded successfully');
+        });
     }
 
     create() {
@@ -31,7 +39,13 @@ class HospitalScene extends Phaser.Scene {
 
         // Create the tilemap
         const map = this.make.tilemap({ key: 'hospitalMap' });
-        console.log('Tilemap created');
+        console.log('Tilemap created, map data:', {
+            width: map.width,
+            height: map.height,
+            tileWidth: map.tileWidth,
+            tileHeight: map.tileHeight,
+            layers: map.layers.map(layer => layer.name)
+        });
 
         // Add tilesets with correct tile sizes
         const tilesetBase = map.addTilesetImage('Tileset', 'Tileset', 16, 16, 0, 0);
@@ -50,21 +64,36 @@ class HospitalScene extends Phaser.Scene {
         const layers = {};
         map.layers.forEach(layerData => {
             if (layerData.type === 'tilelayer') {
-                layers[layerData.name] = map.createLayer(layerData.name, [
-                    tilesetBase, tilesetGrass, tilesetNature, tilesetObjects, tilesetNeo,
-                    tilesetStreet, tilesetFlooring, tilesetFurniture, tilesetCharacter, tilesetBuildingInner
-                ], 0, 0);
-                console.log('Created layer:', layerData.name);
+                try {
+                    layers[layerData.name] = map.createLayer(layerData.name, [
+                        tilesetBase, tilesetGrass, tilesetNature, tilesetObjects, tilesetNeo,
+                        tilesetStreet, tilesetFlooring, tilesetFurniture, tilesetCharacter, tilesetBuildingInner
+                    ], 0, 0);
+                    console.log('Created layer:', layerData.name, 'with dimensions:', {
+                        width: layers[layerData.name].width,
+                        height: layers[layerData.name].height
+                    });
+                } catch (error) {
+                    console.error('Error creating layer:', layerData.name, error);
+                }
             }
         });
 
         // Set up collision layer
         if (layers['Collision']) {
             layers['Collision'].setCollisionByProperty({ collides: true });
+            console.log('Collision layer set up');
         }
 
         // Set up camera
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+        console.log('Camera bounds set:', {
+            width: map.widthInPixels,
+            height: map.heightInPixels
+        });
+
+        // Add a background color to verify the scene is rendering
+        this.cameras.main.setBackgroundColor('#000000');
     }
 }
 
