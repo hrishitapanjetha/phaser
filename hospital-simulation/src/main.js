@@ -60,24 +60,19 @@ class HospitalScene extends Phaser.Scene {
         const tilesetBuildingInner = map.addTilesetImage('building-inner-tiles', 'building-inner-tiles', 16, 16, 0, 0);
         console.log('Tilesets added');
 
-        // Create all tile layers from Tiled
-        const layers = {};
-        map.layers.forEach(layerData => {
-            if (layerData.type === 'tilelayer') {
-                try {
-                    layers[layerData.name] = map.createLayer(layerData.name, [
-                        tilesetBase, tilesetGrass, tilesetNature, tilesetObjects, tilesetNeo,
-                        tilesetStreet, tilesetFlooring, tilesetFurniture, tilesetCharacter, tilesetBuildingInner
-                    ], 0, 0);
-                    console.log('Created layer:', layerData.name, 'with dimensions:', {
-                        width: layers[layerData.name].width,
-                        height: layers[layerData.name].height
-                    });
-                } catch (error) {
-                    console.error('Error creating layer:', layerData.name, error);
-                }
-            }
-        });
+        const allTilesets = [
+            tilesetBase, tilesetGrass, tilesetNature, tilesetObjects, tilesetNeo,
+            tilesetStreet, tilesetFlooring, tilesetFurniture, tilesetCharacter, tilesetBuildingInner
+        ];
+
+        const layers = {
+            'Bottom layer': map.createLayer('Bottom layer', allTilesets, 0, 0),
+            'Middle layer': map.createLayer('Middle layer', allTilesets, 0, 0),
+            'Toplayer': map.createLayer('Toplayer', allTilesets, 0, 0),
+        };
+
+
+        console.log('Layers created');
 
         // Set up collision layer
         if (layers['Collision']) {
@@ -93,7 +88,7 @@ class HospitalScene extends Phaser.Scene {
         });
 
         // Add a background color to verify the scene is rendering
-        this.cameras.main.setBackgroundColor('#000000');
+        this.cameras.main.setBackgroundColor('#ffffff');
     }
 }
 
