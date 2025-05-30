@@ -40,12 +40,16 @@ class HospitalScene extends Phaser.Scene {
         // Create the tilemap
         const map = this.make.tilemap({ key: 'hospitalMap' });
         console.log('Tilemap created, map data:', {
-            width: map.width,
-            height: map.height,
-            tileWidth: map.tileWidth,
-            tileHeight: map.tileHeight,
+            width: map.widthInPixels,
+            height: map.heightInPixels,
+            tileWidth: 16,
+
+            tileHeight: 16,
             layers: map.layers.map(layer => layer.name)
         });
+
+        console.log('Map size:', map.widthInPixels, map.heightInPixels);
+
 
         // Add tilesets with correct tile sizes
         const tilesetBase = map.addTilesetImage('Tileset', 'Tileset', 16, 16, 0, 0);
@@ -53,10 +57,11 @@ class HospitalScene extends Phaser.Scene {
         const tilesetNature = map.addTilesetImage('Nature-tileset', 'Nature-tileset', 16, 16, 0, 0);
         const tilesetObjects = map.addTilesetImage('Objects', 'Objects', 16, 16, 0, 0);
         const tilesetNeo = map.addTilesetImage('neo-tiles', 'neo-tiles', 16, 16, 0, 0);
-        const tilesetStreet = map.addTilesetImage('Street-tilev2', 'Street-tilev2', 32, 32, 0, 0);
-        const tilesetFlooring = map.addTilesetImage('Flooring-tileset', 'Flooring-tileset', 32, 32, 0, 0);
-        const tilesetFurniture = map.addTilesetImage('Furniture-tileset', 'Furniture-tileset', 32, 32, 0, 0);
-        const tilesetCharacter = map.addTilesetImage('Character-tileset', 'Character-tileset', 32, 32, 0, 0);
+        const tilesetStreet = map.addTilesetImage('Street-tilev2', 'Street-tilev2', 16, 16, 0, 0);
+        const tilesetFlooring = map.addTilesetImage('Flooring-tileset', 'Flooring-tileset', 16, 16, 0, 0);
+        const tilesetFurniture = map.addTilesetImage('Furniture-tileset', 'Furniture-tileset', 16, 16, 0, 0);
+
+        const tilesetCharacter = map.addTilesetImage('Character-tileset', 'Character-tileset', 16, 16, 0, 0);
         const tilesetBuildingInner = map.addTilesetImage('building-inner-tiles', 'building-inner-tiles', 16, 16, 0, 0);
         console.log('Tilesets added');
 
@@ -70,6 +75,10 @@ class HospitalScene extends Phaser.Scene {
             'Middle layer': map.createLayer('Middle layer', allTilesets, 0, 0),
             'Toplayer': map.createLayer('Toplayer', allTilesets, 0, 0),
         };
+        map.layers.forEach(layer => {
+            console.log(`Layer "${layer.name}" size:`, layer.width, layer.height);
+
+        });
 
 
         console.log('Layers created');
@@ -80,12 +89,8 @@ class HospitalScene extends Phaser.Scene {
             console.log('Collision layer set up');
         }
 
-        // Set up camera
+
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-        console.log('Camera bounds set:', {
-            width: map.widthInPixels,
-            height: map.heightInPixels
-        });
 
         // Add a background color to verify the scene is rendering
         this.cameras.main.setBackgroundColor('#ffffff');
